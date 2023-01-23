@@ -85,7 +85,9 @@ public class Annotator {
                             ? (rs.getString("final_text")
                                 .replace("\u0008", "") // there are ASCII 08 (backspace?) characters in this column
                                 .replace("\r", "")
-                                .replaceAll("\\s+$","")).replaceAll("\n", "<BR/>")
+                                .replaceAll("\\s+$",""))
+                                    .replaceAll("\n", "<BR/>")
+                                    .replaceAll("\"", "&QUOT;")
                             : null
 
                         ));
